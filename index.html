@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- FontAwesome CDN for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+ (function(){
+     emailjs.init({
+       publicKey: "VqstLKWl3LxMGIhbe",
+     });
+ })();
+</script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a;
+      color: #ffffff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      position: relative;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hamburger Menu */
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+    .nav-links {
+      display: flex;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1e293b;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      nav a {
+        margin: 10px 0;
+      }
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 40px;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .hero-text h2 {
+      color: #38bdf8;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #cbd5e1;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      margin-top: 20px;
+    
+    }
+    .hero-buttons button {
+      margin-right: 15px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: #38bdf8;
+      color: black;
+    }
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+    }
+    .hero-img img {
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e293b;
+      color: #94a3b8;
+    }
+
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0.2; }
+        100% { opacity: 1; }
+      }
+      .blink-effect {
+        animation: blink 0.3s ease;
+      }
+      
+      .btn-primary:hover,
+.btn-outline:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #5a0671;
+}
+
+
+.about {
+  padding: 60px 40px;
+  background-color: #1e293b;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-text h2{
+  font-size: 60px;
+
+}
+
+.about-text h2 span{
+  color: #0ef;
+}
+.about-text {
+  max-width: 400px;
+  margin-right: 20px;
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+.about-img img {
+  border-radius: 10px;
+  max-width: 300px;
+  width: 100%;
+}
+
+
+
+
+
+
+body {
+  background-color: #0f172a;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.journey-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.highlight {
+  color: #38bdf8;
+}
+
+.journey-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.journey-section h3 {
+  border-bottom: 2px solid #38bdf8;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.card {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+}
+
+
+
+
+body {
+  background-color: #0f172a;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 30px;
+  border-left: 2px solid #1d4ed8;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -30px;
+  top: 1px;
+  width: 14px;
+  height: 14px;
+  background-color: #1d4ed8;
+
+  border-radius: 100%;
+  border: 2px solid #979ba6;
+}
+
+.timeline-content {
+  background: #1e293b;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.education-container{
+  padding: 50px;
+  text-align: center;
+}
+
+.col .contents{
+  padding: 0px 30px;
+  border-left: 2px solid #79a3e4;
+}
+.education-container .timeline-dot .{
+  position: relative;
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+  .project-card {
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #38bdf8;
+  }
+
+
+  .project-card {
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #183f51;
+  }
+
+
+
+
+
+
+  .circle-skill {
+    text-align: center;
+    position: relative;
+  }
+  .circle-skill .label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: white;
+  }
+  .circle-skill .label span {
+    display: block;
+    font-size: 18px;
+    color: #38bdf8;
+    font-weight: bold;
+  }
+</style>
+
+
+
+
+
+  
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">Yashaswini  Shetty</div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+
+
+  
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm Yashaswini</h1>
+     
+     <h2><span id="typing-text"></span><span id="cursor">|</span></h2></h3>
+</div>
+     <div class="hero-img ">
+        <!-- Circular Image Section -->
+<div style="max-width: 40%; ">
+    <img src="me.jpg" alt="Profile" style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 20px black;">
+  </div>
+  
+     </div>
+    
+  
+      <p>
+        I build modern, responsive websites using HTML, CSS, JavaScript and modern frameworks.
+        Passionate about design and code that delivers value and user delight.passionate about
+        problem-solving, learning new technologies, and working on innovative solutions that address 
+        real-world challenges.I am eager to apply my technical knowledge and collaborate with talented 
+        teams to create impactful results.
+      </p>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="blinkEffect(this); "><a href="#about">View Me</button></a>
+        <button class="btn-outline" onclick="blinkEffect(this);">  <a href="#contact">Let’s Talk</button></a>
+        </div> 
+      </div>
+    </section>
+
+
+<section id="about" class="about">
+  <div class="about-container">
+    <h2 style="text-align: center; font-size: 36px; margin-bottom: 30px;">About<span style="color: #0ef;"> Me</span></h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I'm a frontend developer with a passion for building modern, responsive websites. 
+          I have experience working with HTML, CSS, JavaScript, and modern frameworks.
+        </p>
+        <p>
+          My goal is to deliver high-quality solutions that meet the needs of my clients. 
+          I'm always looking to learn and improve my skills.
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="me.jpg" alt="Profile" style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 20px black;">
+  
+      </div>
+    </div>
+</div>
+</section>
+
+
+<section id="education" class="education">
+  <div class="education-container">
+     <h2 style="text-align: center; font-size: 36px; margin-bottom: 30px;">My<span style="color: #0ef;"> Journey</span></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content"  class="btn-outline" onclick="blinkEffect(this);">
+          <h4>2021-2025</h4>
+          <h3><span style="color: #0ef;">Bacholer Degree</span>- Adhichunchanagiri Institute Of Technology</h3>
+          <h3><span style="color: #0ef;"></span> </span></h3>
+          Chikkamagalur <br>
+          BE(Information Science and Engineering)<br>
+          with 8.2 CGPA
+          
+          
+        </div>
+</div>
+
+<div class="timeline-item"  >
+  <div class="timeline-dot"></div>
+  <div class="timeline-content"  class="bnt-primary" onclick="blinkEffect(this);" >
+    <h4>2019-2021</h4>
+                            <h3><span class="text" style="color: aqua"> Senior Secondary</span>- Vivekananda PU College</h3>
+                            <p> 
+                                Puttur
+                                Pre-University[PCMB] with 78% 
+                      </p>
+    
+  </div>
+</div>
+       
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content"  class="btn-outline" onclick="blinkEffect(this);">
+              <h4>2018-2019</h4>
+                          <h3> <span class="text" style="color: aqua"> HighSchool</span> - Morarji Desai  Residential School</h3>
+                          <p>
+                            Hassan with 87.68 </p>
+    </div>
+  </div>
+  </section>
+
+
+ 
+
+<!-- Skills Section -->
+<section id="skills" style="background-color: #0f172a; color: white; padding: 50px;">
+  <h2 style="text-align: center; font-size: 40px; margin-bottom: 30px;">
+    My <span style="color: #38bdf8;">Skills</span>
+  </h2>
+
+  <!-- Technical Skills -->
+  <div style="margin-bottom: 56px;">
+    <h3 style="color: #bed6e0;">Technical Skills</h3>
+    
+    <div style="margin: 25px 0;">
+      <label>HTML <i style="color:#c95d2e" class='bx bxl-html5'></i></label>
+                   
+      <div style="background: #1e293b; border-radius: 20px; overflow: hidden;">
+        <div style="width: 90%; background: #38bdf8; padding: 8px 0; text-align: right; border-radius: 20px;">90%</div>
+      </div>
+    </div>
+
+    <div style="margin: 25px 0;">
+      <label>CSS </label><i style="color:#3c19b8"class='bx bxl-css3'></i>
+                    
+      <div style="background: #1e293b; border-radius: 20px; overflow: hidden;">
+        <div style="width: 85%; background: #38bdf8; padding: 8px 0; text-align: right; border-radius: 20px;">85%</div>
+      </div>
+    </div>
+
+    <div style="margin: 25px 0;">
+      <label>Java </label><i style= "color:#ae0956"  class='bx bxl-java'></i>
+      <div style="background: #1e293b; border-radius: 20px; overflow: hidden;">
+        <div style="width: 80%; background: #38bdf8; padding: 8px 0; text-align: right; border-radius: 20px;">80%</div>
+      </div>
+    </div>
+
+    <div style="margin: 25px 0;">
+      <label>SQL </label><i style="color:#11a107 " class='bx bxl-postgresql'></i>
+      <div style="background: #1e293b; border-radius: 20px; overflow: hidden;">
+        <div style="width: 75%; background: #38bdf8; padding: 8px 0; text-align: right; border-radius: 20px;">80%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Skills -->
+  <div>
+    <h3 style="color: #bed6e0;">Professional Skills</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 30px;">
+      
+      <!-- Skill Circle -->
+      <div class="circle-skill">
+        <svg width="120" height="120">
+          <circle cx="60" cy="60" r="50" stroke="#1e293b" stroke-width="10" fill="none"/>
+          <circle cx="60" cy="60" r="50" stroke="#38bdf8" stroke-width="10" fill="none"
+            stroke-dasharray="314"
+            stroke-dashoffset="63"
+            transform="rotate(-90 60 60)"/>
+        </svg>
+        <div class="label">Creativity<br><span>80%</span></div>
+      </div>
+
+      <div class="circle-skill">
+        <svg width="120" height="120">
+          <circle cx="60" cy="60" r="50" stroke="#1e293b" stroke-width="10" fill="none"/>
+          <circle cx="60" cy="60" r="50" stroke="#38bdf8" stroke-width="10" fill="none"
+            stroke-dasharray="314"
+            stroke-dashoffset="31"
+            transform="rotate(-90 60 60)"/>
+        </svg>
+        <div class="label">Communication<br><span>90%</span></div>
+      </div>
+
+      <div class="circle-skill">
+        <svg width="120" height="120">
+          <circle cx="60" cy="60" r="50" stroke="#1e293b" stroke-width="10" fill="none"/>
+          <circle cx="60" cy="60" r="50" stroke="#38bdf8" stroke-width="10" fill="none"
+            stroke-dasharray="314"
+            stroke-dashoffset="78"
+            transform="rotate(-90 60 60)"/>
+        </svg>
+        <div class="label">Problem Solving<br><span>75%</span></div>
+      </div>
+
+      <div class="circle-skill">
+        <svg width="120" height="120">
+          <circle cx="60" cy="60" r="50" stroke="#1e293b" stroke-width="10" fill="none"/>
+          <circle cx="60" cy="60" r="50" stroke="#38bdf8" stroke-width="10" fill="none"
+            stroke-dasharray="314"
+            stroke-dashoffset="47"
+            transform="rotate(-90 60 60)"/>
+        </svg>
+        <div class="label">Teamwork<br><span>85%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- Projects Section -->
+ <section id="projects" style="background-color: #0f172a; color: white; padding: 50px;">
+  <h2 style="text-align: center; font-size: 36px; margin-bottom: 30px;">
+    Latest <span style="color: #38bdf8;">Project</span>
+  </h2>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+    <!-- Project Cards -->
+   <div class="project-card" onclick="openModal('Project One', 'missing.jpeg', 'Details about Project Two go here.', '')">
+    <h5 style="text-align: center; color: rgb(239, 241, 232); font-size: 25px; margin-bottom: 30px;">AI Driven Missing Person Identification</h5>
+    
+    <img src="missing.jpeg" alt="Project 1">
+        
+        <p style=" font-size: 15px; margin-bottom: 10px;  padding:5%;text-align:justify">Missing person identification projects 
+        use technologies like facial recognition, image analysis,
+      predictive analytics, and natural language processing to 
+             locate and identify missing individuals. 
+             These systems analyze photos, videos, and public data, 
+             integrate crowdsourced information, and predict possible
+              locations to enhance search efforts. They are used in 
+              global searches, cross-language matching, and child protection
+               initiatives, improving efficiency and accuracy in reuniting
+                people with their families. 
+        </p>
+    </div>
+    <div class="project-card" onclick="openModal('Project Two', 'cosmetic.png', 'Details about Project Two go here.', '')">
+      <h5 style="text-align: center;color:rgb(239, 241, 232);  rgb(239, 241, 232); font-size: 25px; margin-bottom: 30px;"> Cosmetic Recomendation</h5>
+      
+      <img src="cosmetic.png" alt="Project 2">
+      <p  style=" font-size: 15px; margin-bottom: 5px;  padding:5%;text-align:justify">AI-powered cosmetic recommendation systems analyze skin types and
+          conditions to suggest personalized skincare and beauty products. 
+          Using tools like image analysis, ingredient matching, and 
+          AR virtual try-ons, they ensure compatibility and effectiveness.
+          These systems adapt to factors like weather and user feedback, 
+          offering tailored solutions for e-commerce platforms, dermatology, and 
+          skincare apps, enhancing customer satisfaction and product efficacy.
+      </p>
+    </div>
+
+    <div class="project-card" onclick="openModal('Project Three', 'shopping.jpeg', 'Description for Project Three.', '')">
+      
+      <h5 style="text-align: center;color:rgb(239, 241, 232);  rgb(239, 241, 232); font-size: 25px; margin-bottom: 30px;"> Online Shopping</h5>
+      <img src="shopping.jpeg" alt="Project 3">
+      <p  style=" font-size: 15px; margin-bottom: 5px;  padding:5%;text-align:justify"> An online shopping website allows users to browse, 
+            search, and purchase products easily over the internet. 
+            Key features include product listings, secure payment options,
+            shopping carts, personalized recommendations, and customer
+            support. It offers convenience, variety, and personalized 
+            shopping experiences, with mobile-friendly design. 
+            This platform enhances accessibility and satisfaction, 
+            with examples like Amazon and eBay.
+       
+      </p>
+    </div>
+    
+  </div>
+
+  <!-- Modal (Hidden by default) -->
+  <div id="project-modal" style="display:none; position: fixed; top: 0; left: 0; width:100%; height:100%; background: rgba(0,0,0,0.9); color: white; z-index: 1000; align-items: center; justify-content: center;">
+    <div style="background-color: #1e293b; padding: 30px; border-radius: 10px; max-width: 600px; width: 90%; text-align: center; position: relative;">
+      <span onclick="closeModal()" style="position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer;">&times;</span>
+      <h3 id="modal-title" style="color: #38bdf8;"></h3>
+      <img id="modal-image" src="" style="width: 100%; margin-top: 15px; border-radius: 10px;">
+      <p id="modal-description" style="margin-top: 15px;"></p>
+      <a id="modal-link" href="#" target="_blank" style="color: #38bdf8; text-decoration: underline;">View Project</a>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Contact Section -->
+<section id="contact" style="background-color: #0f172a; color: white; padding: 50px;">
+  <h2 style="text-align: center; font-size: 36px; margin-bottom: 30px;">
+    Get in <span style="color: #38bdf8;">Touch</span>
+  </h2>
+
+  <!-- Contact Info -->
+  <div style="text-align: center; margin-bottom: 30px;">
+    <p><i class="fas fa-envelope" style="color: #38bdf8;"></i>  <i class='bx bxs-send' style="color: #0ef;"></i> yashaswinishetty02.com</p>
+    <p><i class="fas fa-phone" style="color: #38bdf8;"></i> <i class='bx bx-phone' style="color: #0ef;"></i>  +91 8088264816</p>
+    <p>
+      <a href="https://www.linkedin.com/in/yashaswini-h-s-082095301?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="color: #38bdf8; text-decoration: none;">
+        <i class="fab fa-linkedin fa-lg"></i> LinkedIn
+      </a>
+    </p>
+  </div>
+
+  <!-- Contact Form -->
+  <form style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
+    <div style="position: relative;">
+      <i class="fas fa-user" style="position: absolute; top: 10px; left: 10px; color: #38bdf8;"></i>
+      <input type="name" placeholder="Enter your Name"  id="name" 
+        style="padding: 10px 10px 10px 35px; width: 100%; background: #1e293b; border: none; color: white; border-radius: 5px;" />
+    </div>
+
+    <div style="position: relative;">
+      <i class="fas fa-envelope" style="position: absolute; top: 10px; left: 10px; color: #38bdf8;"></i>
+      <input type="email" placeholder="Enter your Email" id="email" required
+
+        style="padding: 10px 10px 10px 35px; width: 100%; background: #1e293b; border: none; color: white; border-radius: 5px;" />
+    </div>
+
+    <div style="position: relative;">
+      <i class="fas fa-tag" style="position: absolute; top: 10px; left: 10px; color: #38bdf8;"></i>
+      <input type="text" placeholder="Enter your Subject" id="subject"
+        style="padding: 10px 10px 10px 35px; width: 100%; background: #1e293b; border: none; color: white; border-radius: 5px;" />
+    </div>
+
+    <div style="position: relative;">
+      <i class="fas fa-comment-dots" style="position: absolute; top: 10px; left: 10px; color: #38bdf8;"></i>
+      <textarea name="" id="message" cols="40" row="10" placeholder="Enter Your Message" required
+     
+        style="padding: 10px 10px 10px 35px; width: 100%; background: #1e293b; border: none; color: white; border-radius: 5px;"></textarea>
+    </div>
+
+    <button type="submit"  class="btn-outline" onclick="blinkEffect(this);"
+    style="padding: 12px; background: #38bdf8; color: white; border: none; border-radius: 5px; cursor: pointer;  transition: 0.3s;">
+    <i class="fas fa-paper-plane"></i> Send Message
+
+    
+  </button>
+  
+  </form>
+</section>
+
+
+  
+   </div>
+  </div>
+</section>
+
+
+
+
+  
+
+
+
+  <footer>
+    &copy; 2025 Yashaswini | All rights reserved
+  </footer>
+
+  <script>
+    
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+   
+        const roles = ["Frontend Developer", "Web Developer"];
+        let currentIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingText = document.getElementById("typing-text");
+      
+        function typeEffect() {
+          const currentRole = roles[currentIndex];
+          if (isDeleting) {
+            typingText.textContent = currentRole.substring(0, charIndex--);
+          } else {
+            typingText.textContent = currentRole.substring(0, charIndex++);
+          }
+      
+          if (!isDeleting && charIndex === currentRole.length) {
+            setTimeout(() => isDeleting = true, 1000);
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            currentIndex = (currentIndex + 1) % roles.length;
+          }
+      
+          setTimeout(typeEffect, isDeleting ? 80 : 120);
+        }
+      
+        typeEffect();
+      
+        // Optional blinking cursor
+        const cursor = document.getElementById("cursor");
+        setInterval(() => {
+          cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
+        }, 500);
+
+        function blinkEffect(button) {
+            button.classList.add('blink-effect');
+            setTimeout(() => {
+              button.classList.remove('blink-effect');
+            }, 300); // Match duration of blink animation
+          }
+
+
+function openModal(title, imgSrc, description, link) {
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-image').src = imgSrc;
+    document.getElementById('modal-description').innerText = description;
+    document.getElementById('modal-link').href = link;
+    document.getElementById('project-modal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('project-modal').style.display = 'none';
+  }
+
+
+
+  //mail//
+  
+
+ // ("4IS8eXIACbvIeEWYJ"); // Replace with your public key
+  //("service_5sajw0lD", "template_1jhvhxj"
+  function sendMail(){
+    let parms={
+        name : document.getElementById("name").Value,
+        email:document.getElementById("email").Value,
+        subject:document.getElementById("subject").Value,
+        message:document.getElementById("message").Value,
+    }
+
+    emailjs.send("service_5sajw0l", "template_1jhvhxj" ,parms).then(alert("Email Sent !!"))
+}
+
+
+<!-- EmailJS SDK -->
+
+  (function(){
+    emailjs.init("4IS8eXIACbvIeEWYJ"); // Replace with your EmailJS public key
+  })();
+
+  function sendMail() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const params = {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message,
+    };
+
+    emailjs.send("service_5sajw0l", "template_1jhvhxj", params)
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        document.getElementById("contact-form").reset();
+      })
+  }
+
+
+
+
+</script>
+
+</body>
+</html>
